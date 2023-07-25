@@ -78,3 +78,27 @@ const styles = StyleSheet.create({
 
 ```
 
+## width & height 는 안 쓴다
+
+```js
+import React from "react";
+import { View } from "react-native";
+
+export default function App() {
+  return (
+    // 중요한것!!! View는 기본적으로 display가 flex로 되어 있고, 방향은 column으로 되어있다.
+    // 따라서 flexDirection만 바꾸어주면 쉽게 row 방향으로 요소를 나열할 수 있다.
+    <View style={{ flex: 1, flexDirection: "row" }}>
+        {/* width와 height는 반응형에 따라 달라보이기 때문에 쓰지 않는다. flex를 사용해서 비율로다가 나타낸다 */}
+      <View style={{ flex: 1, backgroundColor: "tomato" }}></View>
+      <View style={{ flex: 1, backgroundColor: "teal" }}></View>
+      <View style={{ flex: 1, backgroundColor: "orange" }}></View>
+    </View>
+  );
+}
+```
+
+
+
+
+
